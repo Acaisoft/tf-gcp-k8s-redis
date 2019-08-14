@@ -32,6 +32,7 @@ resource "helm_release" "redis" {
     name      = "redis"
     chart     = "stable/redis"
     namespace = "redis"
+    version = "6.1.3"
     values = [
         "${file(lookup(var.helm, "values", "values.yaml"))}"
     ]
